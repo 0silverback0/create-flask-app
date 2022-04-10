@@ -100,7 +100,26 @@ def fill_templates_index_html():
 
 def fill_requirements():
     text = """
-    
+    bcrypt==3.2.0
+    blinker==1.4
+    cffi==1.15.0
+    click==8.1.2
+    Flask==2.1.1
+    Flask-Bcrypt==1.0.1
+    Flask-DebugToolbar==0.13.1
+    Flask-SQLAlchemy==2.5.1
+    greenlet==1.1.2
+    importlib-metadata==4.11.3
+    itsdangerous==2.1.2
+    Jinja2==3.1.1
+    MarkupSafe==2.1.1
+    pycparser==2.21
+    python-dotenv==0.20.0
+    six==1.16.0
+    SQLAlchemy==1.4.35
+    Werkzeug==2.1.1
+    zipp==3.8.0
+
     """
     with open('requirements.txt', 'w') as f:
         f.write(text)
@@ -108,7 +127,7 @@ def fill_requirements():
 def fill_models():
     text = ["from flask_bcrypt import Bcrypt\n", "from flask_sqlalchemy import SQLAlchemy\n",
     "bcrypt = Bcrypt()\n", "db = SQLAlchemy()\n", "\nclass Follows(db.Model):\n", "   __tablename__ = 'create-flask-app'\n",
-    "   data = db.Column(db.Integer, primary_key=True)", "\ndef connect_db(app):\n", " db.app = app\n", "   db.init_app(app)"]
+    "   data = db.Column(db.Integer, primary_key=True)", "\ndef connect_db(app):\n", "  db.app = app\n", "  db.init_app(app)"]
 
     #lines = text.split()
 
